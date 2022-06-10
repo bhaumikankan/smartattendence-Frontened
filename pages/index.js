@@ -15,7 +15,7 @@ export default function Home() {
       seL(position.coords.latitude)
       seL2(position.coords.longitude)
       //getDistance(27.0093299,88.2169027,position.coords.latitude,position.coords.longitude);
-      var x=geometry.computeDistanceBetween(new geometry.LatLng(27.0093299,88.2169027),new geometry.LatLng(position.coords.latitude,position.coords.longitude));
+      var x=geometry.computeDistanceBetween(new geometry.LatLng(22.2480017,87.8156355),new geometry.LatLng(position.coords.latitude,position.coords.longitude));
       setDistance(x);
       
     });
