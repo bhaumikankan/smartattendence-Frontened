@@ -21,7 +21,7 @@ export default function Home() {
         <meta property="og:description" content="Programa de fiestas" />
         <meta
           property="og:image"
-          itemprop="image"
+          itemProp="image"
           content="http://pollosweb.wesped.es/programa_pollos/play.png"
         />
         <meta property="og:type" content="website" />
