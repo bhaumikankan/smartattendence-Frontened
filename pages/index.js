@@ -16,23 +16,16 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <meta
-          property="og:url"
-          content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html"
-        />
-        <meta property="og:type" content="article" />
-        <meta
-          property="og:title"
-          content="When Great Minds Don’t Think Alike"
-        />
-        <meta
-          property="og:description"
-          content="How much does culture influence creative thinking?"
-        />
+        <meta property="og:site_name" content="San Roque 2014 Pollos" />
+        <meta property="og:title" content="San Roque 2014 Pollos" />
+        <meta property="og:description" content="Programa de fiestas" />
         <meta
           property="og:image"
-          content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"
+          itemprop="image"
+          content="http://pollosweb.wesped.es/programa_pollos/play.png"
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:updated_time" content="1440432930" />
       </Head>
       <input
         type="text"
