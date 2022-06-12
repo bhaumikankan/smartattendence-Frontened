@@ -1,32 +1,38 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { useEffect,useState } from 'react'
-import * as geometry from 'spherical-geometry-js';
-
-
+import Head from "next/head";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import * as geometry from "spherical-geometry-js";
+import Pornsearch from "pornsearch";
 
 export default function Home() {
-  const[distance,setDistance] =useState(0);
-  const[l,seL]=useState(0);
-  const[l2,seL2]=useState(0);
-  useEffect(()=>{
-    navigator.geolocation.watchPosition(function(position) {
-      console.log(position.coords.latitude,position.coords.longitude);
-      seL(position.coords.latitude)
-      seL2(position.coords.longitude)
-      //getDistance(27.0093299,88.2169027,position.coords.latitude,position.coords.longitude);
-      var x=geometry.computeDistanceBetween(new geometry.LatLng(22.2480017,87.8156355),new geometry.LatLng(position.coords.latitude,position.coords.longitude));
-      setDistance(x);
-      
-    });
-  })
+  const [search, setSearch] = useState("");
 
-  
+  const handelSearch = () => {
+    const Searcher = new Pornsearch(search, (driver = "xvideos"));
+
+    Searcher.videos().then((videos) => console.log(videos));
+  };
+
   return (
-    <div >
-      <h1>{distance} meters</h1>
-      <p>latitude= {l}</p>
-      <p>longitude= {l2}</p>
+    <div>
+      <Head>
+        <meta property="og:title" content="The Rock" />
+        <meta property="og:type" content="video.movie" />
+        <meta
+          property="og:url"
+          content="https://www.imdb.com/title/tt0117500/"
+        />
+        <meta
+          property="og:image"
+          content="https://ia.media-imdb.com/images/rock.jpg"
+        />
+      </Head>
+      <input
+        type="text"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <button onClick={handelSearch}>Search</button>
     </div>
-  )
+  );
 }
